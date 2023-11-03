@@ -3,19 +3,57 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="../script/signin.js" defer></script>
+    <title>Sign In</title>
   </head>
   <body>
+        <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
+        <nav class="navbar">
+          <span class="logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></span>
+          <ul>
+            <div>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="create.html">New Notes</a></li>
+              <!-- <li><a href="myspace.html">My Space</a></li> -->
+              <li>
+                <input type="text" name="search" id="search">
+                <button>Search</button>
+              </li>
+            </div>
+    
+            <li>
+              <a href="signup.html">sign up/sign in</a>
+            </li>
+          </ul>
+        </nav>
+
     <div class="">
       <h1>Please Sign In</h1>
       <!-- sign in with email and password -->
-      <form action="#" id="signin-form">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+      <form action="#" id="signin-form" >
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
+
+        <div>
+          <input type="submit" id="submitBtn" value="Sign In">
+          <input type="reset" id="resetBtn">
+
+        </div>
+
       </form>
     </div>
+
+
+    
+    <!-- footer -->
+    <footer>I am the footer</footer>
   </body>
 </html>

@@ -3,25 +3,62 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="../script/signup.js" defer></script>
     <title>Sign Up</title>
   </head>
   <body>
+        <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
+        <nav class="navbar">
+          <span class="logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></span>
+          <ul>
+            <div>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="create.html">New Notes</a></li>
+              <!-- <li><a href="myspace.html">My Space</a></li> -->
+              <li>
+                <input type="text" name="search" id="search">
+                <button>Search</button>
+              </li>
+            </div>
+    
+            <li>
+              <a href="signup.html">sign up/sign in</a>
+            </li>
+          </ul>
+        </nav>
+
     <div class="">
       <h1>Please Sign Up</h1>
       <!-- sign up with name, email and password -->
       <form action="#" id="signup-form">
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" id="first_name">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
 
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" id="last_name">
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <div>
+          <input type="checkbox" name="term" id="term">
+          <label for="term">Click to agree to all the terms and conditions.</label>  
+        </div>
+     
+        <div>
+          <input type="submit" id="submitBtn" value="Sign Un">
+          <input type="reset" id="resetBtn">
+        </div>
       </form>
     </div>
+
+
+
+    
+    <!-- footer -->
+    <footer>Coding Notes@2023</footer>
+
   </body>
 </html>

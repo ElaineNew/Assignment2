@@ -1,0 +1,143 @@
+@import url(public.css);
+
+header{
+    position: relative;;
+}
+
+header .slogan{
+    position: absolute;
+    color: #fefae0;
+    font-size: 3rem;
+    top: 30%;
+    left: 10%;
+    z-index: 2; /*  make sure it won't be covered */
+}
+
+header button{
+    font-size: 25px;
+    position: absolute;
+    color: #fefae0;
+    background-color: #f9a03f;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    top: 65%;
+    left: 10%;
+    z-index: 2;
+}
+
+header img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(2, 47, 70, 0.9), rgba(0, 0, 100, 0)); 
+    z-index: 1; 
+  }
+
+main{
+    flex:1;
+    display: flex;
+}
+
+.posts{
+    flex: 2;
+    /* background-color: pink; */
+}
+
+.post{
+    margin: 10px;
+    padding: 15px 10px;
+}
+
+.post .title{
+    color: #023047;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.post .information{
+    display: flex;
+    justify-content: space-between;
+}
+.post .username{
+    font-style: italic;
+}
+
+.post .time{
+    color: #6c757d;
+}
+
+.post .view_more{
+    color: #f9a03f;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.post .categories .category{
+    display: inline-block;
+    text-align: center;
+    width: 60px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: #d4dce3;
+    border: none;
+    margin-left: 5px;
+}
+
+.sidebar{
+    flex: 1;
+    /* background-color: blue; */
+    height: 20vh;
+    position: sticky;
+    top: 40px;
+    z-index: 100;
+
+}
+
+.sidebar section > p{
+    font-size: 1.5rem;
+    margin: 25px 20px;
+}
+
+.sidebar li {
+    margin-top: 10px;
+}
+
+.sidebar .post:hover{
+    color: #f9a03f;
+}
+
+.sidebar .categories{
+    margin: 10px 20px;
+}
+
+.sidebar .category{
+    display: inline-block;
+    text-align: center;
+    width: 60px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: #d4dce3;
+    border: none;
+    margin-left: 5px;
+}
+
+.sidebar .category:hover{
+    color: #fefae0;
+    background-color: #f9a03f;
+}

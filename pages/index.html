@@ -3,18 +3,154 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/index.css">
     <title>Coding Notes</title>
   </head>
   <body>
-    <h1>This is the homepage</h1>
+    <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
+    <nav class="navbar">
+      <span class="logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></span>
+      <ul>
+        <div>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create.html">New Notes</a></li>
+          <!-- <li><a href="myspace.html">My Space</a></li> -->
+          <li>
+            <input type="text" name="search" id="search">
+            <button>Search</button>
+          </li>
+        </div>
 
-    <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out, -->
+        <li>
+          <a href="signup.html">sign up/sign in</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- slogan -->
+    <header>
+      <p class="slogan">Good notes are better than a good memory.</p>
+      <button>Taking Notes</button>
+      <img src="../images/technology.jpg" alt="technology_pic">
+    </header>
+    
 
-    <!-- Search Bar -->
+    <main>
+      <!-- list newest blogs -->
+      <div class="posts">
+        <div class="post">
+          <p class="title">What is POLYMORPHISM</p>
+          <div class="information">
+            <span class="username">Jiaying Qiu</span>
+            <span class="time">Nov 2, 2023</span>
+          </div>
 
-    <!-- list newest 5 blogs -->
+          <p class="categories">Category: <span class="category">Java</span></p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of polymorphism: compile time and runtime... <span class="view_more">view more</span>
+          </p>
+        </div>
+
+        <div class="post">
+          <p class="title">PHP notes</p>
+          <div class="information">
+            <span class="username">Qina Yu</span>
+            <span class="time">Oct 10, 2023</span>
+          </div>
+          <p class="categories">Category:<span class="category">#PHP</span> <span class="category">#Web</span> </p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of ...
+          </p>
+        </div>
+
+        <div class="post">
+          <p class="title">PHP notes</p>
+          <div class="information">
+            <span class="username">Qina Yu</span>
+            <span class="time">Oct 10, 2023</span>
+          </div>
+          <p class="categories">Category:<span class="category">#PHP</span><span class="category">#Web</span> </p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of ...
+          </p>
+        </div>
+
+        <div class="post">
+          <p class="title">PHP notes</p>
+          <div class="information">
+            <span class="username">Qina Yu</span>
+            <span class="time">Oct 10, 2023</span>
+          </div>
+          <p class="categories">Category:<span class="category">#PHP</span><span class="category">#Web</span> </p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of ...
+
+          </p>
+        </div>
+
+        <div class="post">
+          <p class="title">PHP notes</p>
+          <div class="information">
+            <span class="username">Qina Yu</span>
+            <span class="time">Oct 10, 2023</span>
+          </div>
+          <p class="categories">Category:<span class="category">#PHP</span><span class="category">#Web</span> </p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of ...
+          </p>
+        </div>
+        <div class="post">
+          <p class="title">PHP notes</p>
+          <div class="information">
+            <span class="username">Qina Yu</span>
+            <span class="time">Oct 10, 2023</span>
+          </div>
+          <p class="categories">Category:<span class="category">#PHP</span><span class="category">#Web</span> </p>
+          <p>Preview:</p>
+          <p class="snippet">Polymorphism is a very important concept in Java. It enables methods to take different actions upon the object.
+            There are two types of ...
+          </p>
+        </div>
+
+      </div>
+      <!-- recommand topics -->
+      <aside class="sidebar">
+        <section class="recommand">
+          <p>Most popular notes.</p>
+          <hr>
+          <ul class="posts">
+            <li><a class="post">Why use PHP for backend?</a></li>
+            <li><a class="post">Java inheritance.</a></li>
+            <li><a class="post">Inner class best practice.</a></li>
+            <li><a class="post">MERN stack.</a></li>
+            <li><a class="post">How to great a git repository?</a></li>
+          </ul>
+        </section>
+
+        <section class="discover">
+          <p>Discover more topics.</p>
+          <hr>
+          <div class="categories">
+            <span class="category">Web</span>
+            <span class="category">Java</span>
+            <span class="category">SQL</span>
+            <span class="category">Javascript</span>
+            <span class="category">Git</span>
+          </div>
+        </section>
+        
+
+      </aside>
+    </main>
+
+
 
     <!-- footer -->
+    <footer>Coding Notes@2023</footer>
 
   </body>
 </html>
