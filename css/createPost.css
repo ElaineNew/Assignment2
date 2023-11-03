@@ -1,0 +1,14 @@
+@import url('public.css');
+
+.sidebar li{
+    margin-left: 20px;
+}
+
+
+.category_selection{
+    margin: 10px 0;
+}
+
+.btn{
+    margin-top: 10px;
+}

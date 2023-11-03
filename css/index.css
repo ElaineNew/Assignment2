@@ -14,17 +14,22 @@ header .slogan{
 }
 
 header button{
-    font-size: 25px;
+    font-size: 22px;
     position: absolute;
     color: #fefae0;
     background-color: #f9a03f;
-    width: 200px;
-    height: 35px;
+    width: 220px;
+    height: 40px;
     border-radius: 10px;
     border: none;
     top: 65%;
     left: 10%;
     z-index: 2;
+}
+
+header button a{
+    color: #fefae0;
+
 }
 
 header img{
@@ -45,15 +50,8 @@ header::before {
     z-index: 1; 
   }
 
-main{
-    flex:1;
-    display: flex;
-}
 
-.posts{
-    flex: 2;
-    /* background-color: pink; */
-}
+
 
 .post{
     margin: 10px;
@@ -64,6 +62,11 @@ main{
     color: #023047;
     font-weight: bold;
     font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.post .title:hover{
+    color: #f9a03f;
 }
 
 .post .information{
@@ -85,59 +88,5 @@ main{
 }
 
 .post .categories .category{
-    display: inline-block;
-    text-align: center;
-    width: 60px;
-    font-size: 12px;
-    height: 24px;
-    line-height: 24px;
-    border-radius: 8px;
-    background-color: #d4dce3;
-    border: none;
     margin-left: 5px;
-}
-
-.sidebar{
-    flex: 1;
-    /* background-color: blue; */
-    height: 20vh;
-    position: sticky;
-    top: 40px;
-    z-index: 100;
-
-}
-
-.sidebar section > p{
-    font-size: 1.5rem;
-    margin: 25px 20px;
-}
-
-.sidebar li {
-    margin-top: 10px;
-}
-
-.sidebar .post:hover{
-    color: #f9a03f;
-}
-
-.sidebar .categories{
-    margin: 10px 20px;
-}
-
-.sidebar .category{
-    display: inline-block;
-    text-align: center;
-    width: 60px;
-    font-size: 12px;
-    height: 24px;
-    line-height: 24px;
-    border-radius: 8px;
-    background-color: #d4dce3;
-    border: none;
-    margin-left: 5px;
-}
-
-.sidebar .category:hover{
-    color: #fefae0;
-    background-color: #f9a03f;
 }

@@ -1,0 +1,53 @@
+@import url('public.css');
+
+.sidebar li{
+    margin-left: 20px;
+}
+
+
+.post .information{
+    display: flex;
+    justify-content: space-between;
+}
+.post .username{
+    font-style: italic;
+}
+
+.post .time{
+    color: #6c757d;
+}
+
+.post .content{
+    margin: 15px 0;
+}
+
+.post .content p{
+    margin: 10px 0;
+}
+
+
+.leave_review p{
+    vertical-align: top;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+.btn{
+    margin-top: 10px;
+}
+
+.review{
+    border-bottom: 1px solid #a3abb4;
+    margin: 10px 0;
+}
+.review .information{
+    text-align: right;
+}
+
+.review .information .username, .time{
+    font-size: 12px;
+    color: #a3abb4;
+}

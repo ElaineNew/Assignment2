@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/createPost.css">
+    <title>Coding Notes</title>
+  </head>
+  <body>
+    <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
+    <nav class="navbar">
+      <span class="logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></span>
+      <ul>
+        <div>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create.html">New Notes</a></li>
+          <!-- <li><a href="myspace.html">My Space</a></li> -->
+          <li>
+            <input type="text" name="search" id="search">
+            <button>Search</button>
+          </li>
+        </div>
+
+        <li>
+          <a href="signup.html">sign up/sign in</a>
+        </li>
+      </ul>
+    </nav>
+
+    
+
+    <main>
+      <!--create new post -->
+      <div class="post_container">
+        <form action="#">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <div class="category_selection">
+                Category:
+                <input type="checkbox" name="categories" id="web"> 
+                <label for="web">web</label>
+                <input type="checkbox" name="categories" id="java"> 
+                <label for="web">Java</label>
+                <input type="checkbox" name="categories" id="linux"> 
+                <label for="web">Linux</label>
+            </div>
+            Content:
+            <textarea name="new_post" id="new_post" cols="100" rows="20"></textarea>
+            <input type="submit" name="submit_post" id="submit_post" class="btn" value="submit">
+        </form>
+      </div>
+
+
+
+      <!-- recommand topics -->
+      <aside class="sidebar">
+        <section class="recommand">
+          <p>Most popular notes.</p>
+          <hr>
+          <ul class="posts">
+            <li><a class="post">Why use PHP for backend?</a></li>
+            <li><a class="post">Java inheritance.</a></li>
+            <li><a class="post">Inner class best practice.</a></li>
+            <li><a class="post">MERN stack.</a></li>
+            <li><a class="post">How to great a git repository?</a></li>
+          </ul>
+        </section>
+
+        <section class="discover">
+          <p>Discover more topics.</p>
+          <hr>
+          <div class="categories">
+            <span class="category">Web</span>
+            <span class="category">Java</span>
+            <span class="category">SQL</span>
+            <span class="category">Javascript</span>
+            <span class="category">Git</span>
+          </div>
+        </section>
+        
+
+      </aside>
+    </main>
+
+
+
+    <!-- footer -->
+    <footer>Coding Notes@2023</footer>
+
+  </body>
+</html>
