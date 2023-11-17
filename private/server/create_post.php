@@ -1,7 +1,7 @@
 <?php
 session_start(); 
-require_once('db_credentials.php');
-require_once('database.php');
+require_once('../../public/database/db_credentials.php');
+require_once('../../public/database/database.php');
 $db = db_connect();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

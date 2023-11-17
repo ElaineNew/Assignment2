@@ -14,8 +14,8 @@
     ?>
     
     <?php
-    require_once('../../private/server/db_credentials.php');
-    require_once('../../private/server/database.php');
+      require_once('../database/db_credentials.php');
+      require_once('../database/database.php');
     $db = db_connect();
     ?>
 

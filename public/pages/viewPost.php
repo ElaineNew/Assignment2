@@ -13,8 +13,8 @@
     ?>
 
 <?php
-  require_once('../../private/server/db_credentials.php');
-  require_once('../../private/server/database.php');
+  require_once('../database/db_credentials.php');
+  require_once('../database/database.php');
   $db = db_connect();
 ?>
 <?php
@@ -44,13 +44,15 @@
                 </p>
             </div>
         <hr>
-
             <p class="categories">Category: <span class="category"><?php echo $results['CategoryName'] ?></span></p>
             </div>
         </div>
-
+        <?php
+        if (isset($_SESSION['user_email']) && $_SESSION['user_email'] === $results['Email']) {
+        ?>
         <a class="btn edit_btn" id="edit" href= <?php echo "editPost.php?id=".$id?>>Edit</a>
         <a class="btn delete_btn" id="delete" href= <?php echo "../../private/server/delete_post.php?id=".$id?>> Delete</a>
+        <?php } ?>
         <hr>
 
         <!--leave review -->
