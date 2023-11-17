@@ -36,7 +36,20 @@
 
 
 .btn{
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
     margin-top: 10px;
+}
+
+#edit{
+
+    background-color: green;
+    
+}
+
+#delete{
+    background-color: red;
 }
 
 .review{
@@ -51,3 +64,9 @@
     font-size: 12px;
     color: #a3abb4;
 }
+
+@media (max-width: 750px) {
+    .sidebar{
+        display: none;
+    }
+}  

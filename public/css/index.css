@@ -51,7 +51,10 @@ header::before {
   }
 
 
-
+#new{
+    font-size: 1.5rem;
+    margin: 25px 20px;
+}
 
 .post{
     margin: 10px;
@@ -89,4 +92,29 @@ header::before {
 
 .post .categories .category{
     margin-left: 5px;
+}
+
+
+@media (max-width: 750px) {
+    main{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        order: 1;
+        position: relative;
+    }
+    
+    .sidebar .recommend{
+        display: none;
+    }
+
+    .sidebar .discover{
+        margin-left: 25px;
+    }
+
+    .post_container{
+        order: 2;
+    }
+
 }

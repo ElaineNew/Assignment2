@@ -31,3 +31,16 @@
     font-style: italic;
     text-decoration: underline;
 }
+
+@media (max-width: 750px) {
+
+    .sign_container img{
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .sign_container{
+        width: 80%;
+    
+    }
+}

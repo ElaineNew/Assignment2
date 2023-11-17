@@ -9,31 +9,21 @@
   </head>
   <body>
         <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
-        <nav class="navbar">
-          <span class="logo"><a href="index.html"><img src="../images/logo.png" alt="logo"></a></span>
-          <ul>
-            <div>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="createPost.html">New Notes</a></li>
-              <!-- <li><a href="myspace.html">My Space</a></li> -->
-              <li>
-                <input type="text" name="search" id="search">
-                <button>Search</button>
-              </li>
-            </div>
-    
-            <li>
-              <a href="signup.html">sign up/sign in</a>
-            </li>
-          </ul>
-        </nav>
+  <?php
+    include"navbar.php";
+  ?>
 
     <div class="sign_container">
       <img src="../images/signin.png" alt="Coderfly, where creativity soar">
       <h1>Please Sign Up</h1>
 
       <!-- sign up with name, email and password -->
-      <form action="#" id="signup-form">
+      <form action="../../private/server/form_signup.php" id="signup-form" onsubmit="return validate()" method="post">
+        <div>
+          <label for="username">Username</label>
+          <input type="username" name="username" id="username">
+        </div>
+
         <div>
           <label for="email">Email</label>
           <input type="email" name="email" id="email">
@@ -44,16 +34,17 @@
           <input type="password" name="password" id="password">
         </div>
 
-        <div>
+        <div class="checkbox_group">
           <input type="checkbox" name="term" id="term">
           <label for="term">Click to agree to all the terms and conditions.</label>  
         </div>
      
         <div>
-          <input type="submit" id="submitBtn" value="Sign Un" class="btn">
-          <input type="reset" id="resetBtn" class="btn">
+          <button  type="submit" id="submitBtn" class="btn">Sign Up</button>
+          <button  type="reset" id="resetBtn" class="btn">Reset</button>
         </div>
-        <p>Already have an account? Please <a href="signin.html">sign in</a></p>
+        
+        <p>Already have an account? Please <a href="signin.php">sign in</a></p>
       </form>
     </div>
 
@@ -61,7 +52,8 @@
 
     
     <!-- footer -->
-    <footer>Coding Notes@2023</footer>
-
+    <?php
+      include"footer.php";
+    ?>
   </body>
 </html>

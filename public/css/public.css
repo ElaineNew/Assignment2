@@ -19,6 +19,10 @@ body{
     flex-direction: column;
 }
 
+.error{
+    color: red;
+}
+
 
 .navbar{
     position: sticky;
@@ -154,6 +158,7 @@ footer{
     border-radius: 8px;
     background-color: #d4dce3;
     border: none;
+    margin-bottom: 10px;
 }
 
 
@@ -173,4 +178,10 @@ textarea{
     border: 2px solid #b0bbc4;
     vertical-align: top;
     margin-top: 10px;
+}
+
+@media (max-width: 750px) {
+    #searchbar{
+        display: none;
+    }
 }

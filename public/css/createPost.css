@@ -1,5 +1,10 @@
 @import url('public.css');
 
+.error2{
+    /* can't show */
+    color: red;
+}
+
 .sidebar li{
     margin-left: 20px;
 }
@@ -11,4 +16,12 @@
 
 .btn{
     margin-top: 10px;
+}
+
+
+@media (max-width: 750px) {
+    .sidebar{
+        display: none;
+    }
+    
 }
