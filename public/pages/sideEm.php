@@ -12,7 +12,7 @@
     ?>
     <ul class="posts">
       <?php while ($row = mysqli_fetch_assoc($result_set)) {   ?>
-      <li><a class="post" href="./viewPost.php?id=<?php echo $row['BlogId'] ?>"> <?php echo $row['Title'];?></a></li>
+      <li><a class="post" href="/Assignment2/public/pages/viewPost.php?id=<?php echo $row['BlogId'] ?>"> <?php echo $row['Title'];?></a></li>
       <?php }      ?>
     </ul>
   </section>

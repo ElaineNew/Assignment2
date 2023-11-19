@@ -18,11 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $_SESSION['logged_in'] = true;
       $_SESSION['user_email'] = $email;
       $_SESSION['user_id'] = $results['UserId'];
+      $_SESSION['user_name'] = $results['Username'];
       header("Location: /Assignment2/public");
       exit();
     } else {
       $_SESSION['logged_in'] = false;
       $_SESSION['user_email'] = null;
+      $_SESSION['user_name'] = null;
       $_SESSION['user_id'] = null;
       echo "Error: " . $sql . "<br>" . mysqli_error($db);
       header("Location: /Assignment2/public/pages/signup.php");

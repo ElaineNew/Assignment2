@@ -17,10 +17,9 @@
             </form>
           </li>
         </div>
-          <li>
-          <a href="/Assignment2/private/server/logout.php">log out</a>
+          <li><span class = "welcome">Welcome! '. $_SESSION['user_name'].
+          '   |</span><a href="/Assignment2/private/server/logout.php">log out</a>
         </li>
-
       </ul>
     </nav>';
 } else {

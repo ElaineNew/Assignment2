@@ -32,7 +32,7 @@
         <div class="viewpost">
             <div class="post">
             <h1 class="title"><?php echo $results['Title'] ?></h1>
-
+ 
             <div class="information">
                 <span class="username"><?php echo $results['Username'] ?></span>
                 <span class="time"><?php echo $results['CreatedOnDate'] ?></span>
@@ -56,43 +56,65 @@
         <hr>
 
         <!--leave review -->
-
+        <form action="../../private/server/submit_comment.php" method="POST" class="review_form">
+        <input type="hidden" name="blog_id" value="<?php echo $id; ?>" />
         <div class="leave_review">
-            <form action="#" class="review_form">
-                <p>Leave a new review!</p>
-                <div>
-                  <textarea name="new_review" id="new_review" cols="80" rows="10"></textarea>
-                </div>
-                <input type="submit" name="submit_review" id="review_btn" class="btn">
-            </form>
+
+          <p>Leave a new review!</p>
+          <div>
+            <textarea name="new_review" id="new_review" cols="80" rows="10"></textarea>
+          </div>
+          <input type="submit" name="submit_review" id="review_btn" class="btn">
+
         </div>
+      </form>
 
-        <!-- list reviews -->
 
-        <div class="reviews">
-          <div class="review">
-            <p>excellent</p>
-            <div class="information">
-              <span class="username">Jiaying Qiu</span>
-              <span class="time">Nov 2, 2023</span>
-          </div>
-          </div>
-          <div class="review">
-            <p>good</p>
-            <div class="information">
-              <span class="username">Jiaying Qiu</span>
-              <span class="time">Nov 2, 2023</span>
-          </div>
-          </div>
-          <div class="review">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, sed vel voluptate tempore cumque repellat quaerat molestiae, fuga deserunt quod porro fugiat libero expedita. Maiores totam molestiae sunt ipsum quisquam?</p>
-            <div class="information">
-              <span class="username">Jiaying Qiu</span>
-              <span class="time">Nov 2, 2023</span>
-          </div>
-          </div>
-        </div>
+      <!-- list reviews -->
+      <?php
+      $blog_id = $_GET['id'];
+      //3. prepare query add ? as placeholders for variables
+      $sqlComments = "SELECT comments.*, users.FirstName, users.LastName, users.Username FROM comments 
+                      INNER JOIN users ON comments.UserId = users.UserId 
+                      WHERE BlogId = ? 
+                      ORDER BY CommentedOnDate DESC";
+      $stmt = $db->prepare($sqlComments); // Use the correct $sqlComments variable
+      $stmt->bind_param("i", $blog_id); // Bind the $blog_id parameter
+      $stmt->execute();
+      $result = $stmt->get_result();
 
+      ?>
+      <div class="reviews">
+        <?php
+        $loggedInUserId = $_SESSION['user_id'] ?? null;
+        if ($result->num_rows > 0) {
+          // Output each comment
+          while ($comment = $result->fetch_assoc()) {
+        ?>
+            <div class="review">
+              <p><?php echo $comment['CommentContent'] ?></p>
+              <div class="information">
+      <span class="username"><?php echo $comment['Username']; ?></span>
+      <span class="time"><?php echo $comment['CommentedOnDate'] ?></span>
+      <br>
+      <?php
+      // Show delete button if the comment belongs to the logged-in user
+      if ($loggedInUserId == $comment['UserId']) { ?>
+
+        <span class="time"><?php echo '
+        <a href="../../private/server/delete_comment.php?comment_id=' . $comment['CommentId'] . '&blog_id=' . $blog_id . '" onclick="return confirm(\'Are you sure you want to delete this comment?\');">
+         &#x1F5D1; Delete</a>'; ?></span>
+
+      <?php }    ?>
+              </div>
+            </div>
+        <?php
+          }
+        } else {
+          echo '<p>No comments yet.</p>';
+        }
+        ?>
+      </div>
     </div>
 
     <?php

@@ -12,7 +12,12 @@
     <?php
       include"navbarEm.php";
     ?>
-    
+    <?php 
+    // require user to login before creating post
+      if(!isset($_SESSION['user_email'])){
+        header("Location: /Assignment2/public/pages/signin.php");
+      }
+    ?>
     <main>
       <!--create new post -->
       <div class="post_container">
