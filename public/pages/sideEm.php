@@ -2,23 +2,29 @@
   <section class="recommend">
     <p>Most popular notes.</p>
     <hr>
+    <?php
+    require_once('C:\Users\User\Documents\XAMP\htdocs\Assignment2\public\database\db_credentials.php');
+    require_once('C:\Users\User\Documents\XAMP\htdocs\Assignment2\public\database\database.php');
+    $db = db_connect();
+    $sql = "SELECT blog.*, COUNT(comments.CommentId) AS comment_count FROM blog JOIN comments ON(blog.blogId = comments.blogId) GROUP BY blog.blogId ORDER BY comment_count DESC
+    LIMIT 3";
+    $result_set = mysqli_query($db, $sql);
+    ?>
     <ul class="posts">
-      <li><a class="post">Why use PHP for backend?</a></li>
-      <li><a class="post">Java inheritance.</a></li>
-      <li><a class="post">Inner class best practice.</a></li>
-      <li><a class="post">MERN stack.</a></li>
-      <li><a class="post">How to great a git repository?</a></li>
+      <?php while ($row = mysqli_fetch_assoc($result_set)) {   ?>
+      <li><a class="post" href="./viewPost.php?id=<?php echo $row['BlogId'] ?>"> <?php echo $row['Title'];?></a></li>
+      <?php }      ?>
     </ul>
   </section>
   <section class="discover">
     <p>Discover more topics.</p>
     <hr>
     <div class="categories">
-      <span class="category">Web</span>
-      <span class="category">Java</span>
-      <span class="category">SQL</span>
-      <span class="category">Javascript</span>
-      <span class="category">Git</span>
+      <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=CSS">CSS</a></span>
+      <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=Java">Java</a></span>
+      <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=PHP">PHP</a></span>
+      <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=Javascript">Javascript</a></span>
+      <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=HTML">HTML</a></span>
     </div>
   </section>
   

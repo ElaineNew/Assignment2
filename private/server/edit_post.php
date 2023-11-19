@@ -18,9 +18,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $category_results = mysqli_fetch_assoc($category_result_set);
     $categoryId = $category_results['CategoryId'];
 
-    $sql_updatePost = "UPDATE blog SET Title = '$title', CreatedOnDate = curdate(), Content = '$content', CategoryId = '$categoryId' WHERE BlogId = '$id'";
-    $post_result_set = mysqli_query($db, $sql_updatePost);
-    header("Location: /Assignment2/public/pages/viewPost.php?id=$id");
+    // $sql_updatePost = "UPDATE blog SET Title = '$title', CreatedOnDate = curdate(), Content = '$content', CategoryId = '$categoryId' WHERE BlogId = '$id'";
+    // $post_result_set = mysqli_query($db, $sql_updatePost);
+
+
+    $sql_updatePost = "UPDATE blog SET Title = ?, CreatedOnDate = CURDATE(), Content = ?, CategoryId = ? WHERE BlogId = ?";
+    $stmt = mysqli_prepare($db, $sql_updatePost);
+
+    mysqli_stmt_bind_param($stmt, "ssii", $title, $content, $categoryId, $id);
+
+    // Execute the statement
+    $success = mysqli_stmt_execute($stmt);
+
+    if ($success) {
+        // Query executed successfully
+        header("Location: /Assignment2/public/pages/viewPost.php?id=$id");
+    } else {
+        // Query failed
+        echo "Error updating post: " . mysqli_error($db);
+    }
+
+    // header("Location: /Assignment2/public/pages/viewPost.php?id=$id");
 
     // Close the database connection
     db_disconnect();

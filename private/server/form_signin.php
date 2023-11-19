@@ -21,17 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $_SESSION['login_error'] = "Incorrect email or password.";
 
     echo "fail".$_SESSION['logged_in'];
-    // header("Location: /Assignment2/public/pages/signin.php");
+    header("Location: /Assignment2/public/pages/signin.php");
     // exit();
   }else{
     $_SESSION['logged_in'] = true;
     $_SESSION['user_email'] = $email;
     $_SESSION['user_id'] = $results['UserId'];
-    echo "success".$_SESSION['logged_in'];
-    echo "success".$_SESSION['user_email'];
-    echo "success".$_SESSION['user_id'];
 
-    // header("Location: /Assignment2/public");
+    header("Location: /Assignment2/public");
     // exit();
   }
 

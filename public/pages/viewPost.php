@@ -9,7 +9,7 @@
   <body>
     <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
     <?php
-      include"navbar.php";
+      include"navbarEm.php";
     ?>
 
 <?php
@@ -67,7 +67,6 @@
             </form>
         </div>
 
-
         <!-- list reviews -->
 
         <div class="reviews">
@@ -96,8 +95,6 @@
 
     </div>
 
-
-
     <?php
       include"sideEm.php";
     ?>
@@ -107,7 +104,7 @@
 
     <!-- footer -->
     <?php
-      include"footer.php";
+      include"footerEm.php";
     ?>
   </body>
 </html>

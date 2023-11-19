@@ -23,8 +23,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $category_results = mysqli_fetch_assoc($category_result_set);
     $categoryId = $category_results['CategoryId'];
 
-    $sql_insertNewPost = "INSERT INTO blog (Title, CreatedOnDate, Content, CategoryId, UserId) VALUES ('$title', CURDATE(), '$content', '$categoryId', '$userId')";
-    $post_result_set = mysqli_query($db, $sql_insertNewPost);
+    // $sql_insertNewPost = "INSERT INTO blog (Title, CreatedOnDate, Content, CategoryId, UserId) VALUES ('$title', CURDATE(), '$content', '$categoryId', '$userId')";
+    // $post_result_set = mysqli_query($db, $sql_insertNewPost);
+
+    $sql_insertNewPost = "INSERT INTO blog (Title, CreatedOnDate, Content, CategoryId, UserId) VALUES (?, CURDATE(), ?, ?, ?)";
+$stmt = mysqli_prepare($db, $sql_insertNewPost);
+
+if ($stmt) {
+    // Bind parameters "ssii" string string integer integer
+    mysqli_stmt_bind_param($stmt, "ssii", $title, $content, $categoryId, $userId);
+
+    // Execute the statement
+    $success = mysqli_stmt_execute($stmt);
+
+    if ($success) {
+        // Query executed successfully
+        $postId = mysqli_insert_id($db); // Get the ID of the last inserted row
+        header("Location: /Assignment2/public/pages/viewPost.php?id=$postId");
+    } else {
+        // Query failed
+        echo "Error inserting new post: " . mysqli_error($db);
+    }
+
+    // Close the statement
+    mysqli_stmt_close($stmt);
+} else {
+    // Statement preparation failed
+    echo "Error preparing statement: " . mysqli_error($db);
+}
    
 
     $id = mysqli_insert_id($db);

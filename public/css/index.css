@@ -118,3 +118,8 @@ header::before {
     }
 
 }
+
+#new .btn a{
+    font-size: 16px;
+    color: white;
+}

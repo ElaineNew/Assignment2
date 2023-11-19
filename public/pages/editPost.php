@@ -10,13 +10,13 @@
   <body>
     <!-- Navagation: Home, My Space, Sign In/Sign Up, /Log Out,Search -->
     <?php
-      include"navbar.php";
+      include"navbarEm.php";
     ?>
     
     <?php
       require_once('../database/db_credentials.php');
       require_once('../database/database.php');
-    $db = db_connect();
+      $db = db_connect();
     ?>
 
     <?php
@@ -68,7 +68,7 @@
 
     <!-- footer -->
     <?php
-      include"footer.php";
+      include"footerEm.php";
     ?>
 
   </body>

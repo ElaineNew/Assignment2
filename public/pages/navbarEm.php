@@ -9,9 +9,9 @@
         <div>
           <li><a href="/Assignment2/public/index.php">Home</a></li>
           <li><a href="/Assignment2/public/pages/createPost.php">New Notes</a></li>
-          <li><a href="/Assignment2/public/pages/myspace.html">My Notes</a></li>
+          <li><a href="/Assignment2/public/pages/userPosts.php">My Notes</a></li>
           <li id="searchbar">
-            <form action="/Assignment2/public/pages/searchedPOst.php" id="search_bar" onsubmit="return validate()" method="GET">
+            <form action="/Assignment2/public/pages/searchedPost.php" id="search_bar" onsubmit="return validate()" method="GET">
               <input type="text" name="search" id="search">
               <button type="submit">Search</button>
             </form>
@@ -33,7 +33,7 @@
           <li><a href="/Assignment2/public/index.php">Home</a></li>
           <li><a href="/Assignment2/public/pages/createPost.php">New Notes</a></li>
           <li id="searchbar">
-            <form action="/Assignment2/public/pages/searchedPOst.php" id="search_bar" onsubmit="return validate()" method="GET">
+            <form action="/Assignment2/public/pages/searchedPost.php" id="search_bar" onsubmit="return validate()" method="GET">
               <input type="text" name="search" id="search">
               <button type="submit">Search</button>
             </form>
