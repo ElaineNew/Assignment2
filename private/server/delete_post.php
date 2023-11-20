@@ -1,3 +1,5 @@
+  <!-- Created by Jiaying Qiu -->
+
 <?php
 session_start(); 
 require_once('../../public/database/db_credentials.php');

@@ -1,16 +1,15 @@
+  <!-- Created by Qina Yu -->
+
 <?php
 session_start();
 require_once('../../public/database/db_credentials.php');
 require_once('../../public/database/database.php');
 
-function redirect_with_error($url, $errorMessage)
-{
-    $_SESSION['error_message'] = $errorMessage;
-    header("Location: $url");
-    exit;
-}
 
 $db = db_connect();
+
+
+
 // Check if the form was submitted and if the necessary data is available
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['new_review'], $_POST['blog_id'])) {
     $comment_content = mysqli_real_escape_string($db, $_POST['new_review']);
@@ -21,9 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['new_review'], $_POST[
     $sql_findUserId = "SELECT UserId FROM users WHERE Email = '{$user_email}'";
     $user_result_set = mysqli_query($db, $sql_findUserId);
 
+    // require user to login before creating comments
     if (!$user_result_set || mysqli_num_rows($user_result_set) == 0) {
         db_disconnect($db);
-        redirect_with_error("/Assignment2/public/pages/errorPage.php", "User not found.");
+        header("Location: /Assignment2/public/pages/signin.php", "User not found.");
     }
 
     $user_data = mysqli_fetch_assoc($user_result_set);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['new_review'], $_POST[
 
     if (!$comment_result_set) {
         db_disconnect($db);
-        redirect_with_error("/Assignment2/public/pages/errorPage.php", "Error inserting comment: " . mysqli_error($db));
+        header("Location: /Assignment2/public/pages/viewPost.php?id=" . $blog_id);
     }
 
     db_disconnect($db);
@@ -46,5 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['new_review'], $_POST[
     exit;
 } else {
     db_disconnect($db);
-    redirect_with_error("/Assignment2/public/pages/errorPage.php", "Invalid request.");
 }

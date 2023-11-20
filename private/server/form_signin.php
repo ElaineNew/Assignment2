@@ -1,4 +1,6 @@
-<?php
+
+  <!-- Created by Jiaying Qiu -->
+  <?php
 session_start(); 
 require_once('../../public/database/db_credentials.php');
 require_once('../../public/database/database.php');
@@ -8,11 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $email = $_POST["email"];
   $password = $_POST["password"];
 
-  //3. prepare query
   $sql = "select * from users where Email ='$email'";
-  //4. execute the query
   $result_set = mysqli_query($db, $sql);
-  //5. process the result
   $results = mysqli_fetch_assoc($result_set);
 
   if(!$results || !isset($results['Password']) || $password !== $results['Password']){

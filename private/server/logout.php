@@ -1,3 +1,5 @@
+  <!-- Created by Qina Yu -->
+
 <?php
 // Start the session
 session_start();

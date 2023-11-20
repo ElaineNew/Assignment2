@@ -1,4 +1,4 @@
-
+-- Created by Qina Yu
 -- use assign2;
 
 DROP TABLE IF EXISTS comments;

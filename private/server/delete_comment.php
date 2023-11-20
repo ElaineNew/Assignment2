@@ -1,4 +1,6 @@
-<?php
+
+  <!-- Created by Qina Yu -->
+  <?php
 session_start();
 require_once('../../public/database/db_credentials.php');
 require_once('../../public/database/database.php');

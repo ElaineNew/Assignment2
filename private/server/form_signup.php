@@ -1,3 +1,5 @@
+  <!-- Created by Jiaying Qiu -->
+
 <?php
 session_start(); 
 require_once('../../public/database/db_credentials.php');
@@ -17,8 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (mysqli_query($db, $sql)) {
       $_SESSION['logged_in'] = true;
       $_SESSION['user_email'] = $email;
+      $_SESSION['user_name'] = $username;
+
+      $sql = "select * from users where Email ='$email'";
+      $result_set = mysqli_query($db, $sql);
+      $results = mysqli_fetch_assoc($result_set);
       $_SESSION['user_id'] = $results['UserId'];
-      $_SESSION['user_name'] = $results['Username'];
+
       header("Location: /Assignment2/public");
       exit();
     } else {
