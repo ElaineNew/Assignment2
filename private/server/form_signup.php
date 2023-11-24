@@ -2,6 +2,11 @@
 
 <?php
 session_start(); 
+$_SESSION['logged_in'] = false;
+$_SESSION['user_email'] = null;
+$_SESSION['user_name'] = null;
+$_SESSION['user_id'] = null;
+
 require_once('../../public/database/db_credentials.php');
 require_once('../../public/database/database.php');
 $db = db_connect();
@@ -33,11 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $_SESSION['user_email'] = null;
       $_SESSION['user_name'] = null;
       $_SESSION['user_id'] = null;
-      echo "Error: " . $sql . "<br>" . mysqli_error($db);
-      header("Location: /Assignment2/public/pages/signup.php");
+      $redirectUrl = "/Assignment2/public/pages/signup.php";
+      echo '<script>';
+      echo 'alert("Signup failed, please try again.");';
+      echo 'window.location.href = "' . $redirectUrl . '";';
+      echo '</script>';
     }
+    db_disconnect($db);
 
-    db_disconnect();
 }
 
 

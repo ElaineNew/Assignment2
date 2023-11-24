@@ -48,15 +48,15 @@
             </div>
             <p class="categories">Category: <span class="category"><?php echo $results['CategoryName'] ?></span></p>
             </div>
-        </div>
-        <?php
+            <?php
         if (isset($_SESSION['user_email']) && $_SESSION['user_email'] === $results['Email']) {
         ?>
         <a class="btn edit_btn" id="edit" href= <?php echo "editPost.php?id=".$id?>>Edit</a>
         <a class="btn delete_btn" id="delete" href= <?php echo "../../private/server/delete_post.php?id=".$id?>> Delete</a>
         <?php } ?>
+        </div>
+        
     
-        <hr>
 
         <!--leave review -->
         <form action="../../private/server/submit_comment.php" method="POST" class="review_form">
@@ -99,6 +99,7 @@
               <div class="information">
       <span class="username"><?php echo $comment['Username']; ?></span>
       <span class="time"><?php echo $comment['CommentedOnDate'] ?></span>
+
       <br>
       <?php
       // Show delete button if the comment belongs to the logged-in user
@@ -125,7 +126,7 @@
     ?>
     </main>
 
-
+    <?php db_disconnect($db);?>
 
     <!-- footer -->
     <?php

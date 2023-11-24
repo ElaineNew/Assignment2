@@ -30,7 +30,7 @@
                 $sql = "SELECT * FROM blog 
                 JOIN users ON blog.userId = users.userId 
                 JOIN category ON blog.categoryId = category.categoryId 
-                WHERE Title LIKE '%$search%' OR CategoryName LIKE '%$search%' OR Username LIKE '%$search%'";
+                WHERE Title LIKE '%$search%' OR CategoryName LIKE '%$search%' OR Username LIKE '%$search%' ORDER BY CreatedOnDate DESC";
                 
                 $result_set = mysqli_query($db, $sql);
             }else{

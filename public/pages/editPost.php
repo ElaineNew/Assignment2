@@ -22,16 +22,30 @@
     ?>
 
     <?php
+    // if(!isset($_SESSION['user_name'])) {
+    //   header("Location: /Assignment2/public/pages/signin.php");
+    // }
+
     if(!isset($_GET['id'])) {
         header("Location: /Assignment2/public/");
       }
       $id = $_GET['id'];
     $id = $_GET['id'];
     //3. prepare query
-    $sql = "SELECT * FROM blog JOIN users ON(blog.userId = users.userId) JOIN category ON(blog.categoryId = category.categoryId) WHERE blog.BlogId = '$id'";
+    $sql = "SELECT blog.userId as UserId, Title, Content FROM blog JOIN users ON(blog.userId = users.userId) JOIN category ON(blog.categoryId = category.categoryId) WHERE blog.BlogId = '$id'";
+    
     //4. execute the query
     $result_set = mysqli_query($db, $sql);
-    $results = mysqli_fetch_assoc($result_set)
+    $results = mysqli_fetch_assoc($result_set);
+    
+    if(!isset($_SESSION['user_id'])) {
+      header("Location: /Assignment2/public/pages/signin.php");
+    }
+
+    if($_SESSION['user_id'] != $results["UserId"]) {
+      header("Location: /Assignment2/public");
+    }
+ 
     ?>
 
     <main>
@@ -67,6 +81,7 @@
     </main>
 
 
+    <?php db_disconnect($db);?>
 
     <!-- footer -->
     <?php

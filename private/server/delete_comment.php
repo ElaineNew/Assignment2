@@ -20,4 +20,4 @@ if (isset($_SESSION['user_id']) && isset($_GET['comment_id']) && isset($_GET['bl
   header("Location: /Assignment2/public/pages/viewPost.php?id={$blogId}");
   exit;
 }
-db_disconnect($db); // Replace with your actual database disconnection function
+db_disconnect($db); 

@@ -105,7 +105,7 @@ main{
     height: 20vh;
     position: sticky;
     top: 40px;
-    z-index: 100;
+    z-index: 90;
 
 }
 
@@ -117,6 +117,8 @@ main{
 .sidebar li {
     margin-top: 10px;
 }
+
+
 
 .sidebar .post:hover{
     color: #f9a03f;
@@ -146,7 +148,13 @@ footer{
     z-index: 100;
 }
 
-
+aside .img_container{
+    width: 80%;
+    margin: 0 auto;
+}
+aside .img_container img{
+    width: 100%
+}
 
 .category{
     display: inline-block;

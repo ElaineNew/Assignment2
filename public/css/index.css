@@ -121,6 +121,9 @@ header::before {
     .post_container{
         order: 2;
     }
+    #searchbar{
+        display: none;
+    }
 
 }
 

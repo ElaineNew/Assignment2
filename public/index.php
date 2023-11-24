@@ -17,7 +17,7 @@
     <header>
       <p class="slogan">Good notes are better than a good memory.</p>
       <button> <a href="pages/createPost.php">Start Taking Notes</a></button>
-      <img src="images/technology.jpg" alt="technology_pic">
+      <img src="images/notebook.jpg" alt="technology_pic">
     </header>
     
 
@@ -55,6 +55,7 @@
     ?>
 
     </main>
+    <?php db_disconnect($db);?>
     <!-- footer -->
     <?php
       include"pages/footerEm.php";

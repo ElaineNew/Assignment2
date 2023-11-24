@@ -59,11 +59,11 @@ if ($stmt) {
     header("Location: /Assignment2/public/pages/viewPost.php?id=$id");
 
     // Close the database connection
-    db_disconnect();
+    db_disconnect($db);
 }else{
     header("Location: /Assignment2/public/pages/createPost");
     // Close the database connection
-    db_disconnect();
+    db_disconnect($db);
 }
 
 

@@ -16,5 +16,6 @@ if(!$search){
 
 }
 
+db_disconnect($db);
 
 ?>

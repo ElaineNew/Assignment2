@@ -50,9 +50,6 @@
       </form>
     </div>
 
-
-
-    
     <!-- footer -->
     <?php
       include"footerEm.php";

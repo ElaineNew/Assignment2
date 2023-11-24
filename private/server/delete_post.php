@@ -14,4 +14,6 @@ $id = $_GET['id'];
   $result_set = mysqli_query($db, $sql_deleteblog);
 
   header("Location: /Assignment2/public");
+  db_disconnect($db);
+
 ?>

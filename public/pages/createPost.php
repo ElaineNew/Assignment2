@@ -50,6 +50,7 @@
     ?>
     </main>
 
+    <?php db_disconnect($db);?>
 
     <!-- footer -->
     <?php

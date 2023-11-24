@@ -9,7 +9,7 @@
     require_once('C:\Users\User\Documents\XAMP\htdocs\Assignment2\public\database\database.php');
     $db = db_connect();
     $sql = "SELECT blog.*, COUNT(comments.CommentId) AS comment_count FROM blog JOIN comments ON(blog.blogId = comments.blogId) GROUP BY blog.blogId ORDER BY comment_count DESC
-    LIMIT 3";
+    LIMIT 5";
     $result_set = mysqli_query($db, $sql);
     ?>
     <ul class="posts">
@@ -29,5 +29,7 @@
       <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=HTML">HTML</a></span>
     </div>
   </section>
-  
-</aside>";
+  <div class="img_container">
+    <img src="/Assignment2/public/images/meeting.jpg" alt="meeting">
+  </div>
+</aside>

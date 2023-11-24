@@ -14,7 +14,6 @@
       include"navbarEm.php";
     ?>
 
-
     <main>
       <!-- list newest blogs -->
       <div class="post_container">
@@ -26,10 +25,13 @@
         require_once("../database/db_credentials.php");
         require_once("../database//database.php");
         $db = db_connect();
-
+        if(!isset($_SESSION['user_id'])) {
+          header("Location: /Assignment2/public/pages/signin.php");
+        }
+     
         if (isset($_SESSION['user_email'])) {
             $email = $_SESSION['user_email'];
-            $sql = "SELECT * FROM blog JOIN users ON blog.userId = users.userId JOIN category ON blog.categoryId = category.categoryId WHERE Email ='$email'";        
+            $sql = "SELECT * FROM blog JOIN users ON blog.userId = users.userId JOIN category ON blog.categoryId = category.categoryId WHERE Email ='$email' ORDER BY CreatedOnDate DESC";        
             $result_set = mysqli_query($db, $sql);
         }
  
@@ -45,8 +47,6 @@
      </p></div>
      <?php }      ?>
        
-
-
       </div>
       <!-- recommand topics -->
       <?php
@@ -54,6 +54,7 @@
     ?>
 
     </main>
+    <?php db_disconnect($db);?>
 
     <!-- footer -->
     <?php
