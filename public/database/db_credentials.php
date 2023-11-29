@@ -1,8 +1,8 @@
 <?php
 
 define("DB_SERVER", "localhost");
-define("DB_USER", "root");
+define("DB_USER", "qiu");
 define("DB_PASS", "algonquin");
-define("DB_NAME", "assign2");
+define("DB_NAME", "coderfly");
 
 ?>

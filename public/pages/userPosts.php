@@ -23,7 +23,7 @@
 
         <?php
         require_once("../database/db_credentials.php");
-        require_once("../database//database.php");
+        require_once("../database/database.php");
         $db = db_connect();
         if(!isset($_SESSION['user_id'])) {
           header("Location: /Assignment2/public/pages/signin.php");

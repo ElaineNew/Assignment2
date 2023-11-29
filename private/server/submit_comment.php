@@ -23,7 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['new_review'], $_POST[
     // require user to login before creating comments
     if (!$user_result_set || mysqli_num_rows($user_result_set) == 0) {
         db_disconnect($db);
-        header("Location: /Assignment2/public/pages/signin.php", "User not found.");
+
+        $redirectUrl = "/Assignment2/public/pages/signin.php";
+        echo '<script>';
+        echo 'alert("You must sign in to leave a review!");';
+        echo 'window.location.href = "' . $redirectUrl . '";';
+        echo '</script>';
     }
 
     $user_data = mysqli_fetch_assoc($user_result_set);

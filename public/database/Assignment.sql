@@ -1,6 +1,10 @@
 -- Created by Qina Yu
--- use assign2;
 
+CREATE DATABASE `coderfly`;
+GRANT USAGE ON *.* TO 'qiu'@'localhost' IDENTIFIED BY 'algonquin';
+GRANT ALL PRIVILEGES ON coderfly.* TO 'qiu'@'localhost';
+FLUSH PRIVILEGES;
+use `coderfly`;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS blog;
 DROP TABLE IF EXISTS category;

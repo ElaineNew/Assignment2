@@ -5,13 +5,12 @@
     <p>Most popular notes.</p>
     <hr>
     <?php
-    require_once('C:\Users\User\Documents\XAMP\htdocs\Assignment2\public\database\db_credentials.php');
-    require_once('C:\Users\User\Documents\XAMP\htdocs\Assignment2\public\database\database.php');
     $db = db_connect();
     $sql = "SELECT blog.*, COUNT(comments.CommentId) AS comment_count FROM blog JOIN comments ON(blog.blogId = comments.blogId) GROUP BY blog.blogId ORDER BY comment_count DESC
     LIMIT 5";
     $result_set = mysqli_query($db, $sql);
     ?>
+
     <ul class="posts">
       <?php while ($row = mysqli_fetch_assoc($result_set)) {   ?>
       <li><a class="post" href="/Assignment2/public/pages/viewPost.php?id=<?php echo $row['BlogId'] ?>"> <?php echo $row['Title'];?></a></li>
@@ -29,7 +28,5 @@
       <span class="category"><a href="/Assignment2/public/pages/searchedPost.php?search=HTML">HTML</a></span>
     </div>
   </section>
-  <div class="img_container">
-    <img src="/Assignment2/public/images/meeting.jpg" alt="meeting">
-  </div>
+
 </aside>

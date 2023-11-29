@@ -72,6 +72,10 @@ body{
     color: #f9a03f;
 }    
 
+.sm-search{
+    display: none;
+}
+
 .navbar button{
     color: #fefae0;
     background-color: #f9a03f;
@@ -140,7 +144,8 @@ main{
 
 /* footer */
 footer{
-    position: sticky;
+    width: 100%;
+    position: fixed;
     bottom: 0;
     color: #fefae0;
     background-color: #023047;
@@ -148,13 +153,6 @@ footer{
     z-index: 100;
 }
 
-aside .img_container{
-    width: 80%;
-    margin: 0 auto;
-}
-aside .img_container img{
-    width: 100%
-}
 
 .category{
     display: inline-block;
@@ -189,7 +187,12 @@ textarea{
 }
 
 @media (max-width: 750px) {
-    #searchbar{
+    .sm-search{
+        display: flex;
+        justify-content: center;
+
+    }
+    #lg-searchbar{
         display: none;
     }
 }

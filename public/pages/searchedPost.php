@@ -21,7 +21,7 @@
         <p id="new">Searching Result</p>
         <?php
           require_once("../database/db_credentials.php");
-          require_once("../database//database.php");
+          require_once("../database/database.php");
           $db = db_connect();
 
           $search = $_GET["search"];

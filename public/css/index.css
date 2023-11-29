@@ -22,7 +22,7 @@ header button{
     height: 40px;
     border-radius: 10px;
     border: none;
-    top: 65%;
+    top: 70%;
     left: 10%;
     z-index: 2;
 }
@@ -111,7 +111,7 @@ header::before {
     }
     
     .sidebar .recommend{
-        display: none;
+        margin-left: 25px;
     }
 
     .sidebar .discover{
@@ -121,9 +121,7 @@ header::before {
     .post_container{
         order: 2;
     }
-    #searchbar{
-        display: none;
-    }
+
 
 }
 

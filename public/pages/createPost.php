@@ -16,9 +16,18 @@
     ?>
     <?php 
     // require user to login before creating post
-      if(!isset($_SESSION['user_email'])){
-        header("Location: /Assignment2/public/pages/signin.php");
+      if(!isset($_SESSION['user_id'])){
+          $redirectUrl = "/Assignment2/public/pages/signin.php";
+          echo '<script>';
+          echo 'alert("You must sign in to create a note!");';
+          echo 'window.location.href = "' . $redirectUrl . '";';
+          echo '</script>';
       }
+    ?>
+        <?php
+      require_once('../database/db_credentials.php');
+      require_once('../database/database.php');
+      $db = db_connect();
     ?>
     <main>
       <!--create new post -->
